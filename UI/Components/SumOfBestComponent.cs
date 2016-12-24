@@ -55,17 +55,17 @@ namespace LiveSplit.UI.Components
 
         void state_OnReset(object sender, TimerPhase e)
         {
-            UpdateSumOfBestValue((LiveSplitState)sender);
+            UpdateSumOfBestValue(LiveSplitStateHelper.GetTimerEventState(sender) ?? CurrentState);
         }
 
         void state_OnUndoSplit(object sender, EventArgs e)
         {
-            UpdateSumOfBestValue((LiveSplitState)sender);
+            UpdateSumOfBestValue(LiveSplitStateHelper.GetTimerEventState(sender) ?? CurrentState);
         }
 
         void state_OnSplit(object sender, EventArgs e)
         {
-            UpdateSumOfBestValue((LiveSplitState)sender);
+            UpdateSumOfBestValue(LiveSplitStateHelper.GetTimerEventState(sender) ?? CurrentState);
         }
 
         void UpdateSumOfBestValue(LiveSplitState state)
